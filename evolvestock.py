@@ -1,6 +1,5 @@
 """
-Simulates and optionally plots a normally distributed Wiener Process with
-non-overlapping, independent periods
+
 """
 
 import math
@@ -10,7 +9,7 @@ import matplotlib.pyplot as plt
 
 import wienerprocess as wp
 
-def evolvestock():
+def evolvestock(s0, m, s, timesteps, paths, maturity, plot=False):
     """
     Parameters
     --------------
@@ -22,3 +21,9 @@ def evolvestock():
     -------
     
     """
+    W = wp.wienerprocess(timesteps, paths, maturity, plot=False)
+    
+    prices = s0 * math.exp((m - 0.5 * s) + (s * W))
+
+    if plot:
+        plt.plot(prices); plt.title('Evolved Stock Prices'); plt.show();
