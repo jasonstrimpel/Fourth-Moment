@@ -1,4 +1,6 @@
 """
+wienerprocess.py
+
 Simulates and optionally plots a normally distributed Wiener Process with
 non-overlapping, independent periods
 """
