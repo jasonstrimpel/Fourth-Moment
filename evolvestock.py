@@ -38,3 +38,5 @@ def evolvestock(s0, m, s, timesteps, paths, maturity, plot=False):
 
     if plot:
         plt.plot(prices); plt.title('Evolved Stock Prices'); plt.show();
+    
+    return prices
